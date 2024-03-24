@@ -1,0 +1,103 @@
+# ========== 太刀白刃 ==========
+[[trigger]]
+# 当有多个事件时，事件调用模式
+# sequential_all: 顺序执行全部
+# sequential_one: 顺序执行下一个
+# random: 随机选取执行
+action_mode = "sequential_all"
+
+    # 触发条件设置（有且仅有一个）
+    [trigger.trigger_on.longsword_level_changed]
+    new = 1
+    old = 0
+
+    # 触发检查条件设置
+    # 多个条件同时满足才会执行
+    # [[trigger.check]]
+    # weapon_type.value = 3
+
+    # 触发事件设置
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_WHITE_DEFAULT><SIZE 25>太刀大人已解放至不屈白刃！</SIZE></STYL>"
+
+# ========== 太刀黄刃 ==========
+[[trigger]]
+action_mode = "sequential_all"
+
+    [trigger.trigger_on.longsword_level_changed]
+    new = 2
+    old = 1
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_YELLOW_DEFAULT><SIZE 25>太刀大人已解放至永恒黄刃！</SIZE></STYL>"
+
+
+# ========== 太刀红刃 ==========
+[[trigger]]
+action_mode = "sequential_all"
+
+    [trigger.trigger_on.longsword_level_changed]
+    new = 3
+    old = 2
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 25>太刀大人已解放至至尊红刃！</SIZE></STYL>"
+
+
+# ========== 太刀进入任务 ==========
+[[trigger]]
+action_mode = "sequential_all"
+
+    [trigger.trigger_on.quest_state]
+    value = 2
+
+    [[trigger.check]]
+    weapon_type.value = 3
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>太刀侠加入狩猎！</SIZE></STYL>"
+
+
+# ========== 太刀登龙动作 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 87 }
+
+    [[trigger.check]]
+    weapon_type.value = 3
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>这登龙能空？！</SIZE></STYL>"
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_BLUE_DEFAULT><SIZE 40>太刀侠魅力时刻，其他武器全体纳刀三分钟致敬！</SIZE></STYL>"
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_YELLOW_DEFAULT><SIZE 40>呱！我要看这个！我就是要看这个吔！</SIZE></STYL>"
+
+
+# ========== 太刀居合动作 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 102 }
+
+    [[trigger.check]]
+    weapon_type.value = 3
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>呱！强而有力！强而有力口牙！</SIZE></STYL>"
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "你不知道我是<STYL MOJI_RED_DEFAULT><SIZE 40>玩太刀</SIZE></STYL>的？"
+
+
