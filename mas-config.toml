@@ -212,23 +212,6 @@ cooldown = 300
     param = "<STYL MOJI_PURPLE_DEFAULT><SIZE 40>真黑龙棍大人三灯未满，其他武器结算后3000字检讨！！！</SIZE></STYL>"
 
 
-
-# ========== 急袭突刺动作 ==========
-[[trigger]]
-action_mode = "random"
-cooldown = 3000
-
-    [trigger.trigger_on.fsm]
-    new = { target = 3, id = 14 }
-
-    [[trigger.check]]
-    weapon_type.value = 10
-
-    [[trigger.action]]
-    cmd = "SendChatMessage"
-    param = "你不知道我是<STYL MOJI_RED_DEFAULT><SIZE 40>玩虫棍</SIZE></STYL>的？"
-
-
 ### ========== 盾斧进入任务 ========== ###
 
     [trigger.trigger_on.quest_state]
