@@ -193,24 +193,6 @@ action_mode = "random"
     param = "<STYL MOJI_BLUE_DEFAULT><SIZE 40>真黑龙棍大人发动了猎虫强化！</SIZE></STYL>"
 
 
-# ========== 点灯动作 ==========
-[[trigger]]
-action_mode = "random"
-
-    [trigger.trigger_on.fsm]
-    new = { target = 3, id = 83 }
-
-    [[trigger.check]]
-    weapon_type.value = 10
-
-    [[trigger.action]]
-    cmd = "SendChatMessage"
-    param = "<STYL MOJI_PURPLE_DEFAULT><SIZE 40>真黑龙棍大人要来点灯了！！！</SIZE></STYL>"
-     [[trigger.action]]
-    cmd = "SendChatMessage"
-    param = "<STYL MOJI_PURPLE_DEFAULT><SIZE 40>真黑龙棍大人三灯未满，其他武器结算后3000字检讨！！！</SIZE></STYL>"
-
-
 ### ========== 盾斧进入任务 ========== ###
 
     [trigger.trigger_on.quest_state]
