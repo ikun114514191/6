@@ -196,7 +196,6 @@ action_mode = "random"
 # ========== 点灯动作 ==========
 [[trigger]]
 action_mode = "random"
-cooldown = 300
 
     [trigger.trigger_on.fsm]
     new = { target = 3, id = 83 }
@@ -304,28 +303,3 @@ action_mode = "random"
     cmd = "SendChatMessage"
     param = "<STYL MOJI_RED_DEFAULT><SIZE 40>盾斧大人已启动绝对铁壁！！！</SIZE></STYL>"
 
-
-
-    
- # ========== 使用衣装 ==========
-[[trigger]]
-action_mode = "sequential_all"
-
-    [trigger.trigger_on.use_item]
-    item_id = 131
-
-    [[trigger.action]]
-    cmd = "SendChatMessage"
-    param = "使用了回避衣装"
-
-
-# ========== 使用道具 ==========
-[[trigger]]
-action_mode = "sequential_all"
-
-    [trigger.trigger_on.use_item]
-    item_id = 23
-
-    [[trigger.action]]
-    cmd = "SendChatMessage"
-    param = "使用了怪力药丸"
