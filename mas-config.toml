@@ -101,3 +101,248 @@ action_mode = "random"
     param = "你不知道我是<STYL MOJI_RED_DEFAULT><SIZE 40>玩太刀</SIZE></STYL>的？"
 
 
+# ========== 虫棍进入任务 ==========
+[[trigger]]
+action_mode = "sequential_all"
+
+    [trigger.trigger_on.quest_state]
+    value = 2
+
+    [[trigger.check]]
+    weapon_type.value = 10
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>孩子别怕，我拿真黑龙棍来救你了！</SIZE></STYL>”"
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_YELLOW_DEFAULT><SIZE 40>孩子别怕，我带着真·曼巴棍来救你了！</SIZE></STYL>"
+     [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>真曼巴棍进入战斗，其他武器肘击后方可继续狩猎</SIZE></STYL>”"
+
+    
+# ========== 虫棍红灯 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.insect_glaive_light]
+    red = { new = { gt = 0 }, old = { le = 0 } }
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>真黑龙棍已解放『至尊红盏』！！！</SIZE></STYL>"
+
+
+# ========== 虫棍白灯 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.insect_glaive_light]
+    white = { new = { gt = 0 }, old = { le = 0 } }
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_WHITE_DEFAULT><SIZE 40>真黑龙棍已解放『圣洁白盏』！！！</SIZE></STYL>"
+
+
+# ========== 虫棍黄灯 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.insect_glaive_light]
+    yellow = { new = { gt = 0 }, old = { le = 0 } }
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_ORANGE_DEFAULT><SIZE 40>真黑龙棍已解放『传奇橙盏』！！！</SIZE></STYL>"
+
+
+# ========== 虫棍三灯 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.insect_glaive_light]
+    red = { new = { gt = 0 } }
+    white = { new = { gt = 0 } }
+    yellow = { new = { gt = 0 } }
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>三灯封印解除！该轮到猎物们颤抖了！！！</SIZE></STYL>"
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>真黑龙棍大人已开出至尊三灯，传说中的耐摔王出现了！！！</SIZE></STYL>"
+     [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>真黑龙棍大人三灯齐聚，其他武器纳刀敬礼后方可继续！！！</SIZE></STYL>"
+
+
+# ========== 猎虫强化动作 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 133 }
+
+    [[trigger.check]]
+    weapon_type.value = 10
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_BLUE_DEFAULT><SIZE 40>真黑龙棍大人发动了猎虫强化！</SIZE></STYL>"
+
+
+# ========== 点灯动作 ==========
+[[trigger]]
+action_mode = "random"
+cooldown = 300
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 83 }
+
+    [[trigger.check]]
+    weapon_type.value = 10
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_PURPLE_DEFAULT><SIZE 40>真黑龙棍大人要来点灯了！！！</SIZE></STYL>"
+     [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_PURPLE_DEFAULT><SIZE 40>真黑龙棍大人三灯未满，其他武器结算后3000字检讨！！！</SIZE></STYL>"
+
+
+
+# ========== 急袭突刺动作 ==========
+[[trigger]]
+action_mode = "random"
+cooldown = 3000
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 14 }
+
+    [[trigger.check]]
+    weapon_type.value = 10
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "你不知道我是<STYL MOJI_RED_DEFAULT><SIZE 40>玩虫棍</SIZE></STYL>的？"
+
+
+### ========== 盾斧进入任务 ========== ###
+
+    [trigger.trigger_on.quest_state]
+    value = 2
+
+    [[trigger.check]]
+    weapon_type.value = 9
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_BLUE_DEFAULT><SIZE 40>真黑龙盾斧进入战斗，孩子们准备好迎接蓝火了吗？</SIZE></STYL>"
+
+
+
+# ========== 盾斧瓶子充满 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.charge_blade]
+    phials = { new = "full" }
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>盾斧大人已装填至尊六瓶！！！</SIZE></STYL>"
+
+
+# ========== 盾斧红剑动作 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 81 }
+
+    [[trigger.check]]
+    weapon_type.value = 9
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>盾斧大人已灌注炽烈锋刃！！！</SIZE></STYL>"
+
+
+# ========== 盾斧超解动作 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 120 }
+
+    [[trigger.check]]
+    weapon_type.value = 9
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_YELLOW_DEFAULT><SIZE 40>盾斧大人已发动舍身重击！！！</SIZE></STYL>"
+
+
+
+# ========== 盾斧大解动作 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.fsm]
+    new = { target = 3, id = 118 }
+
+    [[trigger.check]]
+    weapon_type.value = 9
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_PURPLE_DEFAULT><SIZE 40>盾斧大人已发动沉重猛击！！！</SIZE></STYL>"
+
+
+# ========== 盾斧电锯启用 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.charge_blade]
+    power_axe_timer = { new = "enabled" }
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>盾斧大人已启动爆裂魔锯，空中的小朋友们，要被肘击了哦</SIZE></STYL>"
+
+
+# ========== 盾斧红盾启用 ==========
+[[trigger]]
+action_mode = "random"
+
+    [trigger.trigger_on.charge_blade]
+    shield_charge_timer = { new = { gt = 0 }, old = { le = 0 } }
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "<STYL MOJI_RED_DEFAULT><SIZE 40>盾斧大人已启动绝对铁壁！！！</SIZE></STYL>"
+
+
+
+    
+ # ========== 使用衣装 ==========
+[[trigger]]
+action_mode = "sequential_all"
+
+    [trigger.trigger_on.use_item]
+    item_id = 131
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "使用了回避衣装"
+
+
+# ========== 使用道具 ==========
+[[trigger]]
+action_mode = "sequential_all"
+
+    [trigger.trigger_on.use_item]
+    item_id = 23
+
+    [[trigger.action]]
+    cmd = "SendChatMessage"
+    param = "使用了怪力药丸"
